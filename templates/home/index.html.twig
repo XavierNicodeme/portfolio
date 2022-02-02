@@ -13,8 +13,8 @@
                     <img src="{{ asset('build/images/drawbedy.png') }}" class="draw ms-3" alt="Draw Profile">
                 </div>
             </div>
-            <div id="projets" class="projets min-wh-100 mb-5 mt-5 min-vh-100">
-                <h2 class="projets-section text-center">MES PROJETS</h2>
+            <div id="projets" class="projets min-wh-100 mb-5 min-vh-100">
+                <h2 class="projets-section text-center my-5">.mes projets</h2>
                 <div class="d-flex flex-wrap">
                     {% for projet in projets %}
                         <p>{{ projet.name }}</p>
@@ -36,7 +36,7 @@
                 </div>
             </div>
             <div id="contact">
-                <h2 class="contact-section text-center">CONTACT</h2>
+                <h2 class="contact-section text-center">.contact</h2>
                 <div class="mt-5 col-6 mx-auto border p-4 mb-5">
                     {{ form_start(form) }}
                     {{ form_widget(form) }}

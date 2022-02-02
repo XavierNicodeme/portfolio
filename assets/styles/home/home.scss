@@ -40,3 +40,12 @@ input:focus, textarea:focus {
 .projets {
   background-color: $secondary;
 }
+
+.btn-primary {
+  background-color: $primary;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: $tertiary;
+  border: none;
+}

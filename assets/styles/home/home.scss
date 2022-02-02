@@ -1,0 +1,35 @@
+.draw {
+  width: 30%;
+  height: auto;
+}
+.block-draw {
+  margin-top: 11%;
+}
+.entete {
+  margin-top: 5%;
+}
+.entete-text {
+  font-size: 20px;
+}
+.name {
+  color: $primary;
+}
+footer {
+  top: 70vh;
+  left: 95%;
+}
+.footer-img {
+  width: 30%;
+  height: auto;
+}
+.footer-infos {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+.navbar-light .navbar-brand {
+  color: $primary;
+}
+.navbar-light .navbar-brand:hover {
+  color: $tertiary;
+}
+

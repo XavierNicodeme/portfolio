@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="test min-vh-100">
+                <div class="block-draw d-flex justify-content-center">
+                    <div class="entete me-3">
+                        <h1 class="entete-text d-flex">bonjour, je suis <p class="name ms-2"> Xavier Nicodème</p></h1>
+                        <h2 class="entete-text ms-5">développeur fullstack basé à bordeaux</h2>
+                    </div>
+                    <img src="{{ asset('build/images/BedySmile.png') }}" class="draw ms-3" alt="Draw Profile">
+                </div>
+            </div>
+            <div id="projets" class="mb-5">
+                <h2 class="projets-section text-center">MES PROJETS</h2>
+                <ul>
+                {% for projet in projets %}
+                    <li>{{ projet.name }}</li>
+                    <li>{{ projet.description }}</li>
+                    <li>{{ projet.link }}</li>
+                    {% if projet.languages is empty %}
+                        <li>
+                            <ul>
+                            {% for language in projet.languages %}
+                                <li>{{ language.name }}</li>
+                                <li>{{ language.logo }}</li>
+                            {% endfor %}
+                            </ul>
+                        </li>
+                    {% else %}
+                        <p>Pas de langages utilisées</p>
+                    {% endif %}
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

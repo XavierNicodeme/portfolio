@@ -1,6 +1,4 @@
 @import "~bootstrap/scss/bootstrap";
 @import "base/variables";
-
-body {
-    background-color: $primary;
-}
+@import "home/home";
+@import "language/language";

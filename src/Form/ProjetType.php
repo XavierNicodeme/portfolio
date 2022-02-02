@@ -18,6 +18,7 @@ class ProjetType extends AbstractType
         $builder
             ->add('name', TextType::class)
             ->add('description', TextareaType::class)
+            ->add('image', TextType::class)
             ->add('link', TextType::class)
             ->add('isGithub')
             ->add('languages', EntityType::class, [

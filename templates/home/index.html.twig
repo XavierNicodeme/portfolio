@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="test min-vh-100">
                 <div class="block-draw d-flex justify-content-center">
@@ -13,34 +13,37 @@
                     <img src="{{ asset('build/images/drawbedy.png') }}" class="draw ms-3" alt="Draw Profile">
                 </div>
             </div>
-            <div id="projets" class="mb-5 mt-5">
+            <div id="projets" class="projets min-wh-100 mb-5 mt-5 min-vh-100">
                 <h2 class="projets-section text-center">MES PROJETS</h2>
-                <ul>
-                {% for projet in projets %}
-                    <li>{{ projet.name }}</li>
-                    <li>{{ projet.description }}</li>
-                    <li>{{ projet.link }}</li>
-                    {% if projet.languages is not empty %}
-                        <li> Construit avec :
-                            <ul>
-                            {% for language in projet.languages %}
-                                <li>
-                                    {{ language.name }}
-                                    <img class="logo-language" src="{{ asset('build/images/' ~ language.logo) }}" alt="{{ language.name }}"/>
-                                </li>
-                            {% endfor %}
-                            </ul>
-                        </li>
-                    {% else %}
-                        <p>Pas de langages utilisées</p>
-                    {% endif %}
-                {% endfor %}
-                </ul>
+                <div class="d-flex flex-wrap">
+                    {% for projet in projets %}
+                        <p>{{ projet.name }}</p>
+                        <p>{{ projet.description }}</p>
+                        <p>{{ projet.link }}</p>
+                        {% if projet.languages is not empty %}
+                            <p> Construit avec :
+                                <ul>
+                                {% for language in projet.languages %}
+                                    <li>
+                                        {{ language.name }}
+                                        <img class="logo-language" src="{{ asset('build/images/' ~ language.logo) }}" alt="{{ language.name }}"/>
+                                    </li>
+                                {% endfor %}
+                                </ul>
+                            </p>
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
             <div id="contact">
                 <h2 class="contact-section text-center">CONTACT</h2>
+                <div class="mt-5 col-6 mx-auto border p-4 mb-5">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <button class="btn">Let's Go !</button>
+                    {{ form_end(form) }}
+                </div>
             </div>
         </div>
     </div>
-
 {% endblock %}

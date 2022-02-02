@@ -10,6 +10,7 @@
 }
 .entete-text {
   font-size: 30px;
+  color: lighten($tertiary, 10%);
 }
 .name {
   color: $primary;
@@ -19,7 +20,7 @@ footer {
   left: 95%;
 }
 .footer-img {
-  width: 30%;
+  width: 35%;
   height: auto;
 }
 .footer-infos {
@@ -32,4 +33,10 @@ footer {
 .navbar-light .navbar-brand:hover {
   color: $tertiary;
 }
-
+input:focus, textarea:focus {
+  border-color: $primary !important;
+  outline: none;
+}
+.projets {
+  background-color: $secondary;
+}

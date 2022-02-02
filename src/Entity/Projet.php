@@ -44,6 +44,11 @@ class Projet
      */
     private $languages;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $image;
+
     public function __construct()
     {
         $this->languages = new ArrayCollection();
@@ -122,6 +127,18 @@ class Projet
     public function removeLanguage(Language $language): self
     {
         $this->languages->removeElement($language);
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }

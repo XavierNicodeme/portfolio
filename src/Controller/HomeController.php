@@ -34,7 +34,7 @@ class HomeController extends AbstractController
                 ]));
 
             $mailer->send($email);
-            $this->addFlash("succes", 'Votre message a bien été envoyé !');
+            $this->addFlash("success", 'Votre message a bien été envoyé !');
             return $this->redirectToRoute('home');
         }
 

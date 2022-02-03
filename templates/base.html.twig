@@ -16,6 +16,13 @@
     </head>
     <body>
     {% include 'components/_navbar.html.twig' %}
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert text-center alert-{{ label }}" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
         {% block body %}
         {% endblock %}
     {% include 'components/_footer.html.twig' %}

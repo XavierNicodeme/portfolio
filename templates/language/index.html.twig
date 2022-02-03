@@ -3,35 +3,43 @@
 {% block title %}Language index{% endblock %}
 
 {% block body %}
-    <h1>Language index</h1>
+    <div class="language-index container-fluid mt-5">
+        <div class="row">
+            <div class="mt-5 min-vh-100 col-10 offset-1">
+                <table class="table mt-5">
+                    <thead>
+                        <tr>
+                            <th class="col-3 text-center">Name</th>
+                            <th class="col-3 text-center">Logo</th>
+                            <th class="col-3 text-center"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for language in languages %}
+                        <tr>
+                            <td class="text-center">{{ language.name }}</td>
+                            <td class="text-center"><img class="logo-language" src="{{ asset('build/images/' ~ language.logo) }}" alt="{{ language.name }}"/></td>
+                            <td class="text-center">
+                                <a href="{{ path('language_show', {'id': language.id}) }}">
+                                    <button class="col-2 btn btn-primary">Voir</button>
+                                </a>
+                                <a href="{{ path('language_edit', {'id': language.id}) }}">
+                                    <button class="col-2 btn btn-primary">Editer</button>
+                                </a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="4">no records found</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <a href="{{ path('language_new') }}">
+                    <button class="btn btn-primary">Ajouter un language</button>
+                </a>
+            </div>
+        </div>
+    </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Logo</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for language in languages %}
-            <tr>
-                <td>{{ language.id }}</td>
-                <td>{{ language.name }}</td>
-                <td><img class="logo-language" src="{{ asset('build/images/' ~ language.logo) }}" alt="{{ language.name }}"/></td>
-                <td>
-                    <a href="{{ path('language_show', {'id': language.id}) }}">show</a>
-                    <a href="{{ path('language_edit', {'id': language.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('language_new') }}">Create new</a>
 {% endblock %}

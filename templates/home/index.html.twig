@@ -15,9 +15,9 @@
             </div>
             <div id="projets" class="projets min-wh-100 mb-5 min-vh-100">
                 <h2 class="projets-section projets-1 text-center my-5 text-dark">.mes projets</h2>
-                <div class="projets-2 d-flex flex-wrap col-9 mx-auto justify-content-center mb-5">
+                <div class="projets-2 d-flex flex-wrap flex-column flex-lg-row col-9 mx-auto justify-content-center mb-5">
                     {% for projet in projets %}
-                        <div class="projets-3 col-4 my-5">
+                        <div class="projets-3 col-12 col-lg-4 my-5">
                             <p class="ms-5 fw-bold text-dark">{{ projet.name }}</p>
                             <a href="{{ path('projet_show', {id: projet.id}) }}">
                                 <img class="projet-img rounded" src="{{ asset('build/images/' ~  projet.image) }}" alt="{{ projet.name }}"/>

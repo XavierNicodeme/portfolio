@@ -33,9 +33,15 @@
                 </div>
             </div>
             {% if app.user %}
-                <a href="{{ path('projet_index') }}">back to list</a>
-                <a href="{{ path('projet_edit', {'id': projet.id}) }}">edit</a>
-                {{ include('projet/_delete_form.html.twig') }}
+                <div class="d-flex flex-column">
+                    <a href="{{ path('projet_index') }}">
+                        <button class="col-1 btn btn-primary ms-5">Retour</button>
+                    </a>
+                    <a href="{{ path('projet_edit', {'id': projet.id}) }}">
+                        <button class="my-2 col-1 btn btn-primary ms-5">Editer</button>
+                    </a>
+                    {{ include('projet/_delete_form.html.twig') }}
+                </div>
             {% endif %}
             </div>
     </div>

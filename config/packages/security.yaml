@@ -41,7 +41,8 @@ security:
     access_control:
          - { path: ^/admin, roles: ROLE_USER }
          - { path: ^/register, roles: ROLE_USER }
-         - { path: ^/projet, roles: ROLE_USER }
+         - { path: ^/projet/new, roles: ROLE_USER }
+         - { path: ^/projet/edit, roles: ROLE_USER }
          - { path: ^/language, roles: ROLE_USER }
 
 when@test:

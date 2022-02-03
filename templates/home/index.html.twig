@@ -10,28 +10,19 @@
                         <h2 class="entete-text d-flex">je suis <p class="name ms-2 fw-bold mb-0"> Xavier Nicodème</p>,</h2>
                         <h2 class="entete-text">développeur junior full-stack</h2>
                     </div>
-                    <img src="{{ asset('build/images/drawbedy.png') }}" class="draw ms-3" alt="Draw Profile">
+                    <img src="{{ asset('build/images/drawbedy.png') }}" class="draw" alt="Draw Profile">
                 </div>
             </div>
             <div id="projets" class="projets min-wh-100 mb-5 min-vh-100">
                 <h2 class="projets-section text-center my-5">.mes projets</h2>
-                <div class="d-flex flex-wrap">
+                <div class="d-flex flex-wrap col-10 mx-auto justify-content-center">
                     {% for projet in projets %}
-                        <p>{{ projet.name }}</p>
-                        <p>{{ projet.description }}</p>
-                        <p>{{ projet.link }}</p>
-                        {% if projet.languages is not empty %}
-                            <p> Construit avec :
-                                <ul>
-                                {% for language in projet.languages %}
-                                    <li>
-                                        {{ language.name }}
-                                        <img class="logo-language" src="{{ asset('build/images/' ~ language.logo) }}" alt="{{ language.name }}"/>
-                                    </li>
-                                {% endfor %}
-                                </ul>
-                            </p>
-                        {% endif %}
+                        <div class="col-3 mx-1 my-3">
+                            <p>{{ projet.name }}</p>
+                            <a href="{{ path('projet_show', {id: projet.id}) }}">
+                                <img class="projet-img" src="{{ asset('build/images/' ~  projet.image) }}" alt="{{ projet.name }}"/>
+                            </a>
+                        </div>
                     {% endfor %}
                 </div>
             </div>

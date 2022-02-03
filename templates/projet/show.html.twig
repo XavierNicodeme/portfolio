@@ -1,38 +1,43 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Projet{% endblock %}
+{% block title %}Projet | {{ projet.name }}{% endblock %}
 
 {% block body %}
-    <h1>Projet</h1>
+    <div class="projet-page container-fluid">
+        <div class="row">
+            <h1 class="offset-3 col-9 text-dark">{{ projet.name }}</h1>
+            <div class="projet-block col-12 d-flex flex-column mt-3 mb-5">
+                <div class="d-flex justify-content-center">
+                    <img class="img-inprojet rounded" src="{{ asset('build/images/' ~ projet.image) }}" alt="{{ projet.name }}"/>
+                </div>
+                <div class="col-6 mx-auto">
+                    <p class="small text-secondary mt-3">{{ projet.isGithub ? 'Github' : 'Site' }}</p>
+                    <h2 class="text-primary">Qu'est ce donc ?</h2>
+                    <p class="text-dark my-3 pb-0 text-center">{{ projet.description }}</p>
+                    <h2 class="text-dark">Langages utilisés :</h2>
+                    <div class="col-12 d-flex mb-3">
+                        <ul class="list-unstyled">
+                            {% for language in projet.languages %}
+                                <li>
+                                   <div class="col-4 d-flex">
+                                       <img class="logo my-2 ms-5 me-2" src="{{ asset('build/images/' ~ language.logo) }}"/>
+                                       <p class="d-flex align-self-center" class="text-dark">{{ language.name }}
+                                    </div>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ projet.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ projet.name }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ projet.description }}</td>
-            </tr>
-            <tr>
-                <th>Link</th>
-                <td>{{ projet.link }}</td>
-            </tr>
-            <tr>
-                <th>IsGithub</th>
-                <td>{{ projet.isGithub ? 'Yes' : 'No' }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('projet_index') }}">back to list</a>
-
-    <a href="{{ path('projet_edit', {'id': projet.id}) }}">edit</a>
-
-    {{ include('projet/_delete_form.html.twig') }}
+                               </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <a class="" href="https://{{ projet.link }} " target="_blank">
+                        <button class="btn btn-primary">Voir le Projet</button>
+                    </a>
+                </div>
+            </div>
+            {% if app.user %}
+                <a href="{{ path('projet_index') }}">back to list</a>
+                <a href="{{ path('projet_edit', {'id': projet.id}) }}">edit</a>
+                {{ include('projet/_delete_form.html.twig') }}
+            {% endif %}
+            </div>
+    </div>
 {% endblock %}

@@ -11,13 +11,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/projet")
- */
+
 class ProjetController extends AbstractController
 {
     /**
-     * @Route("/", name="projet_index", methods={"GET"})
+     * @Route("/projets", name="projet_index", methods={"GET"})
      */
     public function index(ProjetRepository $projetRepository): Response
     {
@@ -27,7 +25,7 @@ class ProjetController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="projet_new", methods={"GET", "POST"})
+     * @Route("/projet/new", name="projet_new", methods={"GET", "POST"})
      */
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -49,7 +47,7 @@ class ProjetController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="projet_show", methods={"GET"})
+     * @Route("/projet/{id}", name="projet_show", methods={"GET"})
      */
     public function show(Projet $projet): Response
     {
@@ -59,7 +57,7 @@ class ProjetController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="projet_edit", methods={"GET", "POST"})
+     * @Route("/projet/edit/{id}", name="projet_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, Projet $projet, EntityManagerInterface $entityManager): Response
     {
@@ -79,7 +77,7 @@ class ProjetController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="projet_delete", methods={"POST"})
+     * @Route("/projet/delete/{id}", name="projet_delete", methods={"POST"})
      */
     public function delete(Request $request, Projet $projet, EntityManagerInterface $entityManager): Response
     {

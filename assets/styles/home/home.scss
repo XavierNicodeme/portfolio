@@ -15,9 +15,6 @@
   font-size: 30px;
   color: lighten($tertiary, 10%);
 }
-.name {
-  color: $primary;
-}
 footer {
   top: 70vh;
   left: 95%;
@@ -30,30 +27,12 @@ footer {
   writing-mode: vertical-rl;
   text-orientation: mixed;
 }
-.navbar-light .navbar-brand {
-  color: $primary;
-}
-.navbar-light .navbar-brand:hover {
-  color: $primary;
-}
 input:focus, textarea:focus {
   border-color: $primary !important;
   outline: none;
 }
 .projets {
   background-color: $secondary;
-}
-
-.btn-primary {
-  background-color: $primary;
-  border: none;
-}
-.btn-primary:hover {
-  background-color: $tertiary;
-  border: none;
-}
-.copyright {
-  color: $tertiary;
 }
 .projet-img {
   width: 90%;

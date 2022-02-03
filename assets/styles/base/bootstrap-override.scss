@@ -1,0 +1,23 @@
+@import "variables";
+
+:root {
+  --bs-primary: $primary;
+  --bs-primary-rgb: 245, 162, 12;
+  --bs-secondary: $secondary;
+  --bs-secondary-rgb: 238, 238, 238;
+  --bs-dark: $tertiary;
+  --bs-dark-rgb: 85, 85, 85;
+}
+
+.btn-primary {
+  background-color: $primary;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: $tertiary;
+  border: none;
+}
+.btn-primary:focus {
+  background-color: $tertiary;
+  border: none;
+}

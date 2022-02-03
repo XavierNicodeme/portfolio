@@ -34,6 +34,7 @@ Encore
      */
     .addEntry('app', './assets/app.js')
     .addEntry('cv', './assets/cv.js')
+    .addEntry('reveal', './assets/reveal.js')
 
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)

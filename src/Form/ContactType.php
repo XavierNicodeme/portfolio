@@ -19,7 +19,7 @@ class ContactType extends AbstractType
                 'required' => true,
                 'attr' => [
                     'placeholder' => 'Nom',
-                    'class' => 'col-12 mb-3 border-0 border-bottom p-2'
+                    'class' => 'col-12 mb-3 border-0 border-bottom p-2 contact-2'
                 ],
             ])
             ->add('email', EmailType::class, [
@@ -27,7 +27,7 @@ class ContactType extends AbstractType
                 'required' => true,
                 'attr' => [
                     'placeholder' => '@',
-                    'class' => 'col-12 mb-3 border-0 border-bottom p-2'
+                    'class' => 'col-12 mb-3 border-0 border-bottom p-2 contact-3'
                 ]
             ])
             ->add('tel', TextType::class, [
@@ -35,7 +35,7 @@ class ContactType extends AbstractType
                 'required' => true,
                 'attr' => [
                     'placeholder' => 'Téléphone',
-                    'class' => 'col-12 mb-3 border-0 border-bottom p-2'
+                    'class' => 'col-12 mb-3 border-0 border-bottom p-2 contact-4'
                 ]
             ])
             ->add('message', TextareaType::class, [
@@ -43,7 +43,7 @@ class ContactType extends AbstractType
                 'required' => true,
                 'attr' => [
                     'placeholder' => 'Message',
-                    'class' => 'col-12 mb-3 border-0 border-bottom ps-2',
+                    'class' => 'col-12 mb-3 border-0 border-bottom ps-2 contact-5',
                     'rows' => 6
                 ],
             ])

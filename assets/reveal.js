@@ -17,7 +17,6 @@ ScrollReveal().reveal('.contact-3', { delay:300, reset: true});
 ScrollReveal().reveal('.contact-4', { delay:400, reset: true});
 ScrollReveal().reveal('.contact-5', { delay:500, reset: true});
 
-
 ScrollReveal().reveal('.projet-page', { reset: true});
 
 ScrollReveal().reveal('.show-3', { delay:300});
